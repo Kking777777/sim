@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+    <button id="mudar-cor" class="btn btn-secondary fw-bold ms-2">Mudar fundo</button>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +13,12 @@
 </head>
 
 <body>
+    <div id="acessibilidade" class="menu-acessibilidade">
+    <button id="aumentar-fonte" class="btn btn-primary fw-bold">A +</button>       
+    <button id="diminuir-fonte" class="btn btn-primary fw-bold">A -</button>
+    <button id="mudar-cor" class="btn btn-secondary fw-bold ms-2">Mudar fundo</button>
+</div>
+
     <header class=" p-5">
 
         <nav class="container d-flex justify-content-between align-items-center">
@@ -113,7 +120,18 @@
         <i class="bi bi-tiktok"></i>
         <p class="mt-3">Desenvolvido por Start by Alura. Projeto fictício sem fins comerciais.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js"></script> 
+    <script>
+    const botaoMudarCor = document.getElementById('mudar-cor');
+    const cores = ['#f8f9fa', '#ffe5ec', '#e0f7fa', '#f3e5f5', '#fffde7'];
+    let indice = 0;
+
+    botaoMudarCor.addEventListener('click', () => {
+        indice = (indice + 1) % cores.length;
+        document.body.style.backgroundColor = cores[indice];
+    });
+</script>
+
 
 </body>
 
